@@ -58,14 +58,19 @@ A* is spatially aware. By using the Haversine formula (which calculates the phys
 To run this project locally, you will need `Node.js` and a `C++ Compiler` (like `g++` via MinGW or GCC).
 
 ### 1. Compile the C++ Engine
-Navigate to the root directory and compile the C++ source code into an executable.
-```bash
-# For Windows
-g++ src/*.cpp -I include -o FlightOptimizer.exe
+We use **CMake** as our professional build system to manage C++ compilation.
 
-# For Mac/Linux
-g++ src/*.cpp -I include -o FlightOptimizer
+Navigate to the root directory and build the executable:
+```bash
+# Create build directory
+mkdir build
+cd build
+
+# Generate build files and compile
+cmake ..
+cmake --build .
 ```
+*(Note: If you don't have CMake, you can also compile manually with `g++ src/*.cpp -I include -o FlightOptimizer.exe`)*
 
 ### 2. Start the Backend API
 Navigate to the backend directory, install the dependencies, and start the Express server.
